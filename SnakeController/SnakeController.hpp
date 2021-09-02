@@ -37,6 +37,9 @@ private:
     void handleDirectionChange(const DirectionInd&);
     void handleFoodPositionChange(const FoodInd& receivedFood);
     void handleNewFood(const FoodResp& requestedFood);
+    void handlePause(const PauseInd&);
+    
+    bool isPaused = false;
 
     struct Segment
     {
@@ -53,7 +56,7 @@ private:
     void notifyAboutFailure();
     void repaintTile(const Segment& position, Cell type);
     void repaintTile(unsigned int x, unsigned int y, Cell type);
-
+    
     void cleanNotExistingSnakeSegments();
 
 
